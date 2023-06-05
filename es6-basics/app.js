@@ -180,11 +180,11 @@
 
 // console.log(ct, f2, firstName);
 
-let users = [
-  { email: "john@test", age: 32 },
-  { email: "jenny@test", age: 34 },
-  { email: "jack@test", age: 36 },
-];
+// let users = [
+//   { email: "john@test", age: 32 },
+//   { email: "jenny@test", age: 34 },
+//   { email: "jack@test", age: 36 },
+// ];
 
 // let [{ email: e1, age: a1 }, { email: e2, age: a2 }, { email: e3, age: a3 }] =
 //   users;
@@ -195,16 +195,64 @@ let users = [
 
 // console.log(users); // ?
 
-let [u1, u2, u3] = users;
+// let [u1, u2, u3] = users;
 
-u1.age = 40;
+// u1.age = 40;
 
-console.log(users); // ?
+// console.log(users); // ?
 
-// Deep Copy
-const clonedCopy = JSON.parse(JSON.stringify(users));
+// // Deep Copy
+// const clonedCopy = JSON.parse(JSON.stringify(users));
 
-clonedCopy[0].age = 21;
+// clonedCopy[0].age = 21;
 
-console.log("ORIGINAL : ", users);
-console.log("CLONED : ", clonedCopy);
+// console.log("ORIGINAL : ", users);
+// console.log("CLONED : ", clonedCopy);
+
+// TEMPLATE LITERALS
+
+// let username = "John Doe";
+// let userAge = 32;
+
+// let greet = `Hello from ${username},
+
+// I'm ${userAge} years old!
+// `;
+
+// let greetAgain = "Hello from " + username + ",\n"+ "I'm " + userAge + " years old"
+
+// console.log(greet);
+
+// CLASS
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   getName() {
+//     return this.name;
+//   }
+// }
+
+// class Student extends Person {
+//   constructor(email, age, name) {
+//     super(name);
+//     this.email = email;
+//     this.age = age;
+//   }
+
+//   getDetails() {
+//     return `Hello from ${super.getName()}- Email : ${this.email} - Age : ${
+//       this.age
+//     }`;
+//   }
+// }
+
+// let joe = new Student("joe@test", 34, "Joe");
+
+// console.log(joe.getDetails());
+
+// let x = 101;
+
+import { sum, mul } from "./utils/maths.js";
+
+console.log("SUM is : ", sum(2, 5));

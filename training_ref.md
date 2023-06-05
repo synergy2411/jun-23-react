@@ -22,11 +22,55 @@
   > with / without curly brace ({ })
 
 - Spread / Rest
+
+  > denoted by (...)
+  > Spread Operator : spread the collection into individual item
+  > Rest Operator : create the collection from individual item; last argument in the function declaration.
+
 - Block Scoping
+
+  > allows to restrict the scope of variables to the nearest block (eg. for, if, else etc)
+  > 'var' keyword : restrict the scope to the function
+  > let
+  > const
+
 - Destructuring
-- Promise
-- Template Literals
+
+  > unpack the collection (Object / Array)
+  > Swallow : Some part still connected with original object
+  > Deep Copy : cloned object is fresh copy; not connected with original object
+  > -> JSON.parse(JSON.stringify(users));
+
+- Template Literals : " " | ' ' | ` ` (back tick)
+
+  > Embed the variables within string without using ( + ) concatenation operator
+  > Multi-line strings without using (\n) operator
+
 - Classes and Inheritance
 - Module (ESM)
+
+  > encapsulation
+  > modular approach
+  > avoids global pollution
+  > 'import' and/or 'export' keywords
+  > Types of Modules in JavaScript
+  > -> ECMAScript Module (ESM) - browsers
+  > use of 'import' and 'export' keyword
+
+  -> CommonJS : NodeJS Runtime
+  -> AMD (Asynchronous Module Definition)
+  -> UMD (Universal Module Definition)
+
+> Named Module
+> Defautl Module
+
+- Promise
 - Fetch API
 - Generators
+
+# JavaScript - Types
+
+- Primitive : Numbers, String, Boolean
+- Reference : Object, Arrays, Functions, Date
+
+(const == mutable) --> NO
