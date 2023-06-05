@@ -270,32 +270,32 @@
 
 // PROMISES
 
-const promiseProducer = (ms) => {
-  let promise = new Promise((resolve, reject) => {
-    if (ms > 3000) {
-      reject(new Error("Too high value"));
-    } else {
-      setTimeout(() => {
-        resolve("RESOLVED");
-      }, ms);
-    }
-  });
+// const promiseProducer = (ms) => {
+//   let promise = new Promise((resolve, reject) => {
+//     if (ms > 3000) {
+//       reject(new Error("Too high value"));
+//     } else {
+//       setTimeout(() => {
+//         resolve("RESOLVED");
+//       }, ms);
+//     }
+//   });
 
-  return promise;
-};
+//   return promise;
+// };
 
 // Async...await
 
-const consumePromise = async () => {
-  try {
-    const data = await promiseProducer(3500);
-    console.log(data);
-  } catch (err) {
-    console.error(err);
-  }
-};
+// const consumePromise = async () => {
+//   try {
+//     const data = await promiseProducer(3500);
+//     console.log(data);
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
 
-consumePromise();
+// consumePromise();
 
 // then...catch
 // const consumePromise = () => {
@@ -308,3 +308,18 @@ consumePromise();
 // };
 
 // consumePromise();
+
+console.log("Program Start");
+
+setTimeout(() => {
+  console.log("TIMER");
+}, 0);
+
+Promise.resolve("SUCCESS").then((data) => console.log(data));
+
+console.log("Program End");
+
+// OUTPUT ->
+// Program Start
+// Program End
+// SUCCESS

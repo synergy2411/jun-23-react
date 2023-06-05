@@ -92,3 +92,10 @@
 - Reference : Object, Arrays, Functions, Date
 
 (const == mutable) --> NO
+
+# JavaScript runs all sync code first, before Async Code
+
+# All the Microtasks will execute before MacroTask
+
+- MicroTask - queueMicrotaks(), Promise()
+- MacroTask - Timer, XHR
