@@ -47,6 +47,7 @@
   > Multi-line strings without using (\n) operator
 
 - Classes and Inheritance
+
 - Module (ESM)
 
   > encapsulation
@@ -62,9 +63,26 @@
   -> UMD (Universal Module Definition)
 
 > Named Module
-> Defautl Module
+> Default Module
 
-- Promise
+- Promise API
+
+  > Always asynchronous
+  > Future Value
+  > Capable to deal with Async JavaScript Code (eg. Callbacks)
+  > Handshake between promise producer and consumer
+  > Consuming promises by two ways -
+
+        -> .then().catch()
+        -> Async...await
+
+  > Two states of Promise
+
+        -> Pending
+        -> Settled
+            -> Resolve / Success State
+            -> Rejected / Failure State
+
 - Fetch API
 - Generators
 

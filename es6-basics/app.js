@@ -253,6 +253,58 @@
 
 // let x = 101;
 
-import { sum, mul } from "./utils/maths.js";
+// Named Import
+// import { sum, mul } from "./utils/maths.js";
+// console.log("SUM is : ", sum(2, 5));
 
-console.log("SUM is : ", sum(2, 5));
+// import * as myMath from "./utils/maths.js";
+
+// // Default Import
+// import getMagicNumber, { getFortune } from "./utils/fortune.js";
+
+// console.log("Multiply : ", myMath.mul(2, 5));
+
+// console.log("Today's lucky Number : ", getMagicNumber());
+
+// console.log(getFortune());
+
+// PROMISES
+
+const promiseProducer = (ms) => {
+  let promise = new Promise((resolve, reject) => {
+    if (ms > 3000) {
+      reject(new Error("Too high value"));
+    } else {
+      setTimeout(() => {
+        resolve("RESOLVED");
+      }, ms);
+    }
+  });
+
+  return promise;
+};
+
+// Async...await
+
+const consumePromise = async () => {
+  try {
+    const data = await promiseProducer(3500);
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+consumePromise();
+
+// then...catch
+// const consumePromise = () => {
+//   console.log("START");
+//   promiseProducer(4000)
+//     .then((data) => console.log(data))
+//     .catch((err) => console.error("ERROR : ", err));
+
+//   console.log("END");
+// };
+
+// consumePromise();
