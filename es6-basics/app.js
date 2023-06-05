@@ -39,7 +39,9 @@
 
 // console.log(nestedFn());
 
-// LEXICAL SCOPING
+// LEXICAL SCOPING -
+// - scope is determined by the physical
+//  location of the funciton
 
 // let x = 301;
 // function a() {
@@ -53,15 +55,47 @@
 
 // a();
 
-let x = 201;
+// let x = 201;
 
-function b() {
-  console.log(x); //        201
-}
+// function b() {
+//   console.log(x); //        201
+// }
 
-function a() {
-  let x = 101;
-  b();
-}
+// function a() {
+//   let x = 101;
+//   b();
+// }
 
-a();
+// a();
+
+// REST OPERATOR : last argument in function declaration
+
+// function doSomething(email, ...args) {
+//   console.log(args[0]); // 32
+// }
+
+// doSomething("john@test");
+// doSomething("john@test", 32);
+// doSomething("john@test", 32, true);
+
+let arr = [3, 4, 5];
+
+let moreNumbers = [1, 2, ...arr];
+
+console.log(moreNumbers);
+
+let userOne = {
+  email: "john@test",
+  age: 32,
+};
+
+let userTwo = {
+  ...userOne,
+  age: 38,
+};
+
+console.log(userTwo); // { email, age }
+
+let result = Object.assign({}, { email: "jenny@test" }, { age: 40 });
+
+console.log("RESULT : ", result);
