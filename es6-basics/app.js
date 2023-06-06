@@ -309,17 +309,38 @@
 
 // consumePromise();
 
-console.log("Program Start");
+// console.log("Program Start");
 
-setTimeout(() => {
-  console.log("TIMER");
-}, 0);
+// setTimeout(() => {
+//   console.log("TIMER");
+// }, 0);
 
-Promise.resolve("SUCCESS").then((data) => console.log(data));
+// Promise.resolve("SUCCESS").then((data) => console.log(data));
 
-console.log("Program End");
+// console.log("Program End");
 
 // OUTPUT ->
 // Program Start
 // Program End
 // SUCCESS
+
+window.onload = function () {
+  const listContainer = document.getElementById("list-container");
+
+  let url = "http://localhost:3000/todos";
+
+  const fetchAllTodos = () => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((todos) => {
+        todos.forEach((todo) => {
+          const liEl = document.createElement("li");
+          liEl.innerHTML = `${todo.label}`;
+          listContainer.appendChild(liEl);
+        });
+      })
+      .catch((err) => console.error(err));
+  };
+
+  fetchAllTodos();
+};

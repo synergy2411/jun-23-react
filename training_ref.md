@@ -58,7 +58,7 @@
   > -> ECMAScript Module (ESM) - browsers
   > use of 'import' and 'export' keyword
 
-  -> CommonJS : NodeJS Runtime
+  -> CommonJS : NodeJS Runtime (require() & module.exports)
   -> AMD (Asynchronous Module Definition)
   -> UMD (Universal Module Definition)
 
@@ -84,6 +84,13 @@
             -> Rejected / Failure State
 
 - Fetch API
+
+  > built-in in browser
+  > enable us to make XHR calls
+  > returns the Promise
+  > eg. fetch(url).then().catch()
+  > https://jsonplaceholder.typicode.com/todos
+
 - Generators
 
 # JavaScript - Types
@@ -97,5 +104,27 @@
 
 # All the Microtasks will execute before MacroTask
 
-- MicroTask - queueMicrotaks(), Promise()
-- MacroTask - Timer, XHR
+- MicroTask - queueMicrotask(), Promise()
+- MacroTask - Timer, XHR etc
+
+# Module Types
+
+- ECMAScript Module - ESM - Default for Browsers
+
+  > import & export
+
+- CommonJS Module - Default for NodeJS
+  > require() & module.exports keyword
+
+---
+
+## JSON-SERVER : fake REST API Server
+
+- npm install json-server -g
+- json-server --watch db.json --port=3001
+
+## XHR Calls
+
+GET
+POST
+DELETE

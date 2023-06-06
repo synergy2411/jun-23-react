@@ -1,0 +1,16 @@
+{
+  "todos": [
+    {
+      "id": "t001",
+      "label": "pot the plants"
+    },
+    {
+      "id": "t002",
+      "label": "buy some grocery"
+    },
+    {
+      "id": "t003",
+      "label": "renew car insurance"
+    }
+  ]
+}
