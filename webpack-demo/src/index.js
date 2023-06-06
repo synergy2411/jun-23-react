@@ -1,7 +1,9 @@
+import _ from "lodash";
+
 const createComponent = () => {
   let divElement = document.createElement("div");
 
-  divElement.innerHTML = `Hello World`;
+  divElement.innerHTML = _.join(["Hello", "World", "Again", "!!!"], " ");
 
   return divElement;
 };
