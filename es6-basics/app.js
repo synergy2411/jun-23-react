@@ -325,9 +325,37 @@
 // SUCCESS
 
 window.onload = function () {
+  let url = "http://localhost:3000/todos";
+
   const listContainer = document.getElementById("list-container");
 
-  let url = "http://localhost:3000/todos";
+  const txtItem = document.getElementById("txtItem");
+
+  const btnAdd = document.getElementById("btnAdd");
+
+  btnAdd.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    if (txtItem.value.trim() === "") return;
+
+    console.log("Entered : ", txtItem.value);
+
+    let newTodo = {
+      label: txtItem.value,
+    };
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTodo),
+    })
+      .then((response) => {
+        console.log("SUCCESS ,", response);
+      })
+      .catch((err) => console.error(err));
+  });
 
   const fetchAllTodos = () => {
     fetch(url)
@@ -344,3 +372,7 @@ window.onload = function () {
 
   fetchAllTodos();
 };
+
+let fruits = ["apple", "banana", "kiwi"];
+
+// fruits.forEach( (item) => console.log("ITEM : ", item));
