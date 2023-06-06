@@ -324,55 +324,215 @@
 // Program End
 // SUCCESS
 
-window.onload = function () {
-  let url = "http://localhost:3000/todos";
+// window.onload = function () {
+//   let url = "http://localhost:3000/todos";
 
-  const listContainer = document.getElementById("list-container");
+//   const listContainer = document.getElementById("list-container");
 
-  const txtItem = document.getElementById("txtItem");
+//   const txtItem = document.getElementById("txtItem");
 
-  const btnAdd = document.getElementById("btnAdd");
+//   const btnAdd = document.getElementById("btnAdd");
 
-  btnAdd.addEventListener("click", (event) => {
-    event.preventDefault();
+//   btnAdd.addEventListener("click", (event) => {
+//     event.preventDefault();
 
-    if (txtItem.value.trim() === "") return;
+//     if (txtItem.value.trim() === "") return;
 
-    console.log("Entered : ", txtItem.value);
+//     console.log("Entered : ", txtItem.value);
 
-    let newTodo = {
-      label: txtItem.value,
-    };
+//     let newTodo = {
+//       label: txtItem.value,
+//     };
 
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTodo),
-    })
-      .then((response) => {
-        console.log("SUCCESS ,", response);
-      })
-      .catch((err) => console.error(err));
-  });
+//     fetch(url, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(newTodo),
+//     })
+//       .then((response) => {
+//         console.log("SUCCESS ,", response);
+//       })
+//       .catch((err) => console.error(err));
+//   });
 
-  const fetchAllTodos = () => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((todos) => {
-        todos.forEach((todo) => {
-          const liEl = document.createElement("li");
-          liEl.innerHTML = `${todo.label}`;
-          listContainer.appendChild(liEl);
-        });
-      })
-      .catch((err) => console.error(err));
-  };
+//   const fetchAllTodos = () => {
+//     fetch(url)
+//       .then((response) => response.json())
+//       .then((todos) => {
+//         todos.forEach((todo) => {
+//           const liEl = document.createElement("li");
+//           liEl.innerHTML = `
+//           ${todo.label}
+//           <button>Delete</button>
+//           `;
+//           listContainer.appendChild(liEl);
+//         });
+//       })
+//       .catch((err) => console.error(err));
+//   };
 
-  fetchAllTodos();
-};
+//   fetchAllTodos();
+// };
 
-let fruits = ["apple", "banana", "kiwi"];
+// let fruits = ["apple", "banana", "kiwi"];
 
 // fruits.forEach( (item) => console.log("ITEM : ", item));
+
+// --------------
+
+// GENERATORS
+
+// let fruits = ["apple", "banans", "kiwi"];
+
+// for (let item of fruits) {
+//   console.log(item);
+// }
+
+// console.log(fruits);
+
+// let map = new Map();
+// map.set("name", "John Doe");
+// map.set("age", 32);
+
+// for (let item of map) {
+//   console.log(item);
+// }
+
+// ------------------------
+
+// CLOSURES : process of binding the outer scope variables with nested function
+
+// function mystry() {
+//   let x = 4;
+//   return function () {
+//     return ++x;
+//   };
+// }
+
+// const nestedFn = mystry();
+
+// console.log(nestedFn()); // 5
+
+// console.log(nestedFn()); // 6
+
+// function buildTicket(transport) {
+//   let numOfPassengers = 0;
+//   return function (name) {
+//     return `Hello Mr/Mrs ${name},
+//     You are going via ${transport}.
+//     Your Ticket ID is ${++numOfPassengers}.`;
+//   };
+// }
+
+// const nestedShipFn = buildTicket("Ship");
+
+// console.log(nestedShipFn("John")); // ?
+
+// console.log(nestedShipFn("Jack")); // ?
+
+// const nestedCarFn = buildTicket("Car");
+
+// console.log(nestedCarFn("Alice")); // 1
+
+// -------------
+
+// function* theGenerator() {
+//   yield 1;
+//   yield 2;
+//   yield 3;
+// }
+
+// const it = theGenerator();
+
+// console.log(it.next());
+
+// console.log(it.next());
+
+// console.log(it.next());
+
+// console.log(it.next()); // {value : undefined, done : true}
+
+// for (let item of theGenerator()) {
+//   console.log("ITEM : ", item);
+// }
+
+// function* getNumbers() {
+//   let i = 0;
+//   while (true) {
+//     yield ++i;
+//   }
+// }
+
+// let it = getNumbers();
+
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+
+// let friends = ["f1", "f2", "f3"];
+
+// function* firstGenerator() {
+//   yield 1;
+//   yield 2;
+// }
+// function* secondGenerator() {
+//   yield* firstGenerator();
+//   yield 3;
+//   yield 4;
+//   yield* friends;
+// }
+
+// const it = secondGenerator();
+
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+
+// -------------
+
+function promiseOne() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("FIRST PROMISE");
+    }, 1000);
+  });
+}
+function promiseTwo() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("SECOND PROMISE");
+    }, 2000);
+  });
+}
+
+async function* theGenerator() {
+  try {
+    const firstPromiseResult = await promiseOne();
+    yield firstPromiseResult;
+
+    const secondPromiseResult = await promiseTwo();
+    yield secondPromiseResult;
+  } catch (err) {
+    console.log("Something bad happened");
+  }
+}
+
+async function consumeGenerator() {
+  for await (let item of theGenerator()) {
+    console.log("ASYNC ITEM : ", item);
+  }
+}
+
+consumeGenerator();

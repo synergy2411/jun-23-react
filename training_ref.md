@@ -92,6 +92,20 @@
   > https://jsonplaceholder.typicode.com/todos
 
 - Generators
+  > function with (\*)
+  > returns special object - 'Iterator'
+  > Iterator Object implments two protocols - (Iterable & Iterator Protocals)
+  > 'yeild' keyword
+  > lazy evaluation
+  > maintains their old state
+  > redux state management using SAGA / THUNK
+
+> Arrays, Maps etc loop them using for...of
+
+> Iterable Protocol - Object must have [Symbol.iterator] property
+> Iterator Protocol - Object must return { value : "", done : boolean }
+
+---
 
 # JavaScript - Types
 
