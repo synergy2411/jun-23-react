@@ -149,3 +149,14 @@ DELETE
 
 > Initialize NPM in project -> npm init -y
 > Webpack dependencies -> npm install webpack webpack-cli -D
+> to install lodash -> npm install lodash
+
+> npm run build -> webpack
+
+Default entry point -> src/index.js
+Default output -> dist/main.js
+
+> to load CSS files -> npm install style-loader css-loader
+> to load babel -> npm install @babel/core @babel/preset-env babel-loader
+
+> Default Webpack Loaders - JavaScript & JSON file
