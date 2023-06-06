@@ -142,3 +142,10 @@
 GET
 POST
 DELETE
+
+---
+
+# Webpack - Module bundler
+
+> Initialize NPM in project -> npm init -y
+> Webpack dependencies -> npm install webpack webpack-cli -D

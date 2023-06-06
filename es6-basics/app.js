@@ -276,7 +276,7 @@
 //       reject(new Error("Too high value"));
 //     } else {
 //       setTimeout(() => {
-//         resolve("RESOLVED");
+//         resolve({ message: "SUCCESS" });
 //       }, ms);
 //     }
 //   });
@@ -288,8 +288,8 @@
 
 // const consumePromise = async () => {
 //   try {
-//     const data = await promiseProducer(3500);
-//     console.log(data);
+//     const data = await promiseProducer(2000);
+//     console.log("ASYNC ->", data);
 //   } catch (err) {
 //     console.error(err);
 //   }
@@ -300,7 +300,7 @@
 // then...catch
 // const consumePromise = () => {
 //   console.log("START");
-//   promiseProducer(4000)
+//   promiseProducer(2000)
 //     .then((data) => console.log(data))
 //     .catch((err) => console.error("ERROR : ", err));
 
@@ -528,6 +528,10 @@ async function* theGenerator() {
     console.log("Something bad happened");
   }
 }
+
+// for (let item of theGenerator()) {   // THROW ERROR- ASYNC VALUE RETURNED
+//   console.log("ASYNC ITEM : ", item);
+// }
 
 async function consumeGenerator() {
   for await (let item of theGenerator()) {
