@@ -160,3 +160,23 @@ Default output -> dist/main.js
 > to load babel -> npm install @babel/core @babel/preset-env babel-loader
 
 > Default Webpack Loaders - JavaScript & JSON file
+
+---
+
+Code splitting
+Plugins
+
+> npm install html-webpack-plugin -D
+> Webpack-dev-server
+> React
+
+---
+
+HTML : presentation : "NOUNS"
+JavaScript : Behaviour :"VERBS"
+CSS : Layout & styles : "ADJECTIVE"
+
+Designer : CSS
+Developer : HTML & Javascript
+
+---

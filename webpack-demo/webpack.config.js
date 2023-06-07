@@ -1,11 +1,16 @@
 // COMMONJS MODULE SYSTEM
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  // entry : "./src/index.js"
+  entry: {
+    index: "./src/index.js",
+    app: "./src/moduleB.js",
+  },
   output: {
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     path: path.join(__dirname, "build"),
   },
   module: {
@@ -20,4 +25,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
 };

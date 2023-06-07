@@ -48,7 +48,18 @@ eval("/* module decorator */ module = __webpack_require__.nmd(module);\nvar __WE
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data.json */ \"./src/data.json\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n\n\n\nconsole.log(\"DATA : \", _data_json__WEBPACK_IMPORTED_MODULE_1__);\nvar createComponent = function createComponent() {\n  var divElement = document.createElement(\"div\");\n  divElement.innerHTML = lodash__WEBPACK_IMPORTED_MODULE_0___default().join([\"Hello\", \"World\", \"Again\", \"!!!\"], \" \");\n  divElement.classList.add(\"hello\");\n  return divElement;\n};\ndocument.body.appendChild(createComponent());\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data.json */ \"./src/data.json\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _moduleB__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./moduleB */ \"./src/moduleB.js\");\n\n\n\n\nconsole.log(\"DATA : \", _data_json__WEBPACK_IMPORTED_MODULE_1__);\nvar createComponent = function createComponent() {\n  var divElement = document.createElement(\"div\");\n  divElement.innerHTML = lodash__WEBPACK_IMPORTED_MODULE_0___default().join([\"Hello\", \"World\", \"Again\", \"!!!\"], \" \");\n  divElement.classList.add(\"hello\");\n  var btnEl = document.createElement(\"button\");\n  btnEl.innerHTML = \"Click Me & check console\";\n  btnEl.onclick = _moduleB__WEBPACK_IMPORTED_MODULE_3__[\"default\"];\n  divElement.appendChild(btnEl);\n  return divElement;\n};\ndocument.body.appendChild(createComponent());\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/moduleB.js":
+/*!************************!*\
+  !*** ./src/moduleB.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ printSomething)\n/* harmony export */ });\nfunction printSomething() {\n  console.log(\"Something is printed!!\");\n}\n\n//# sourceURL=webpack://webpack-demo/./src/moduleB.js?");
 
 /***/ }),
 
