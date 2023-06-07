@@ -14,7 +14,7 @@ const createComponent = () => {
 
   const btnEl = document.createElement("button");
 
-  btnEl.innerHTML = "Click Me & check console";
+  btnEl.innerHTML = "Click Me & check console!!!";
 
   btnEl.onclick = printSomething;
 

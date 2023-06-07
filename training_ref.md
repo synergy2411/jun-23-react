@@ -167,8 +167,11 @@ Code splitting
 Plugins
 
 > npm install html-webpack-plugin -D
+
 > Webpack-dev-server
-> React
+
+- npm install webpack-dev-server -D
+  > React
 
 ---
 
