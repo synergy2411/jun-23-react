@@ -183,3 +183,40 @@ Designer : CSS
 Developer : HTML & Javascript
 
 ---
+
+> npm install
+
+# React Libraries
+
+> npm install react react-dom
+> npm install @babel/preset-react -D (Transpiler for JSX)
+
+---
+
+# ATOMIC DESIGN
+
+- ATOM : smallest unit. e.g one button, one input field
+- MOLECULES : combo of atoms. eg. Search bar -> one text field + one button
+- ORGANISM : combo of molecules. eg. Navigation Bar -> multiple links + Search Bar
+- TEMPLATE: combo of organism. eg. Form ->
+- PAGE : hold the complate app
+
+# Thinking in React way
+
+"Component should be reusable"
+
+# React CLI tool - CREATE REACT APP
+
+- npx create-react-app <project-name>
+
+# React : for Web Applications -> web browsers
+
+# React-native : for Native Application : Camera, Geolocation etc
+
+# Ionic Framework : Hybrid Apps (Web Browsers as well as an access native features)
+
+-> npx create-react-app first-app
+
+-> cd first-app
+
+-> npm start

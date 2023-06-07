@@ -9,3 +9,5 @@ function App() {
 }
 
 export default App;
+
+// component -> JSX -> JS -> VDOM -> Real DOM
