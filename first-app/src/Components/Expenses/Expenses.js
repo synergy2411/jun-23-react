@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
+import AddExpense from "./AddExpense/AddExpense";
 
 function Expenses() {
   let [toggle, setToggle] = useState(false);
@@ -39,10 +40,11 @@ function Expenses() {
             <button className="btn btn-dark" onClick={toggleClickHandler}>
               Toggle
             </button>
-            {toggle ? "TRUE" : "FALSE"}
           </div>
         </div>
       </div>
+
+      {toggle && <AddExpense />}
 
       {/* RENDERING ALL THE EXPENSES */}
       <div className="row">
