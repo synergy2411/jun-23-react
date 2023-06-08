@@ -2,13 +2,23 @@ import { useState } from "react";
 
 export default function AddExpense() {
   const [enteredTitle, setEnteredTitle] = useState("Sample text");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredCreatedAt, setEnteredCreatedAt] = useState("");
 
   const titleChangeHandler = (event) => setEnteredTitle(event.target.value);
+  const amountChangeHandler = (event) => setEnteredAmount(event.target.value);
+  const createdAtChangeHandler = (event) =>
+    setEnteredCreatedAt(event.target.value);
+
+  const addClickHandler = (event) => {
+    event.preventDefault();
+    console.log(enteredAmount, enteredTitle, enteredCreatedAt);
+  };
 
   return (
     <div className="card">
       <div className="card-body">
-        <h2 className="text-center">Add New Expense - {enteredTitle}</h2>
+        <h2 className="text-center">Add New Expense</h2>
         <form>
           {/* title */}
           <div className="form-group">
@@ -22,8 +32,47 @@ export default function AddExpense() {
             />
           </div>
           {/* amount */}
+          <div className="form-group">
+            <label htmlFor="title">Amount : </label>
+            <input
+              type="number"
+              name="amount"
+              className="form-control"
+              value={enteredAmount}
+              onChange={amountChangeHandler}
+              step="0.1"
+            />
+          </div>
           {/* date */}
+          <div className="form-group">
+            <label htmlFor="title">Date : </label>
+            <input
+              type="date"
+              name="createdAt"
+              className="form-control"
+              value={enteredCreatedAt}
+              onChange={createdAtChangeHandler}
+              min="2021-04-01"
+              max="2023-12-31"
+            />
+          </div>
           {/* button */}
+          <div className="form-group">
+            <div className="row">
+              <div className="col">
+                <div className="d-grid">
+                  <button className="btn btn-primary" onClick={addClickHandler}>
+                    Add
+                  </button>
+                </div>
+              </div>
+              <div className="col">
+                <div className="d-grid">
+                  <button className="btn btn-warning">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </div>
