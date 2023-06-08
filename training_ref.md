@@ -163,6 +163,11 @@ Default output -> dist/main.js
 
 ---
 
+> npm run eject
+> npm run build
+> npm run test
+> npm run start
+
 Code splitting
 Plugins
 
@@ -220,3 +225,10 @@ Developer : HTML & Javascript
 -> cd first-app
 
 -> npm start
+
+---
+
+# Bootstrap - responsive
+
+- Support of CSS classes
+- npm install bootstrap
