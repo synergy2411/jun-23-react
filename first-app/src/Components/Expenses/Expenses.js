@@ -1,6 +1,9 @@
+import { useState } from "react";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
 
 function Expenses() {
+  let [toggle, setToggle] = useState(false);
+
   let expenses = [
     {
       id: "e001",
@@ -22,8 +25,26 @@ function Expenses() {
     },
   ];
 
+  const toggleClickHandler = () => {
+    // toggle = !toggle;      // NEVER CHANGE STATE LIKE THIS, ALWAYS CALL STATE CHANGE FUNCTION
+    setToggle(!toggle);
+  };
+
   return (
     <div className="container">
+      {/* ADD BUTTON TO TOGGLE */}
+      <div className="row mb-4">
+        <div className="col-4 offset-4">
+          <div className="d-grid">
+            <button className="btn btn-dark" onClick={toggleClickHandler}>
+              Toggle
+            </button>
+            {toggle ? "TRUE" : "FALSE"}
+          </div>
+        </div>
+      </div>
+
+      {/* RENDERING ALL THE EXPENSES */}
       <div className="row">
         {expenses.map((expense) => (
           <ExpenseItem
@@ -31,6 +52,7 @@ function Expenses() {
             amount={expense.amount}
             createdAt={expense.createdAt}
             id={expense.id}
+            key={expense.id}
           />
         ))}
       </div>
