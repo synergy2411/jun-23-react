@@ -24,16 +24,26 @@ class ClassBasedComp extends Component {
   };
 
   componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => response.json())
+      .then((todos) => {
+        this.setState({ todos: todos });
+      })
+      .catch((err) => console.error(err));
+
     console.log("Component Did Mount");
   }
   componentDidUpdate() {
     console.log("Component Did Update");
   }
-
   componentWillUnmount() {
     console.log("Component Will Unmount");
+    this.setState({
+      counter: 0,
+      result: [],
+      todos: [],
+    });
   }
-
   shouldComponentUpdate(nextProps, nextState) {
     // console.log("PROPS : ", nextProps);
     // console.log("STATE : ", nextState);
@@ -47,7 +57,7 @@ class ClassBasedComp extends Component {
   render() {
     console.log("Render");
     return (
-      <div>
+      <div className="container">
         <h2>Class based component loaded - {this.props.username}</h2>
 
         <p className="display-4">Counter : {this.state.counter}</p>
@@ -63,6 +73,25 @@ class ClassBasedComp extends Component {
             <li key={r}>{r}</li>
           ))}
         </ul>
+        <hr />
+        {this.state.todos.length > 0 && (
+          <table className="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.todos.map((todo) => (
+                <tr key={todo.id}>
+                  <td>{todo.id}</td>
+                  <td>{todo.title}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     );
   }
