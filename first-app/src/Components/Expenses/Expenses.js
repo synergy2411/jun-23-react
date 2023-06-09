@@ -29,6 +29,8 @@ function Expenses() {
 
   let [expenses, setExpenses] = useState(INITIAL_EXPENSES);
 
+  let [selYear, setSelYear] = useState("2021");
+
   const toggleClickHandler = () => {
     // toggle = !toggle;      // NEVER CHANGE STATE LIKE THIS, ALWAYS CALL STATE CHANGE FUNCTION
     setToggle(!toggle);
@@ -39,6 +41,15 @@ function Expenses() {
     setExpenses((prevState) => [expense, ...prevState]); // ASYNC
     console.log("expenses : ", expenses);
   };
+
+  const onYearSelected = (selectedYear) => {
+    console.log("SELECTED YEAR : ", selectedYear);
+    setSelYear(selectedYear); // 2022
+  };
+
+  const filteredExpenses = expenses.filter(
+    (exp) => exp.createdAt.getFullYear() === Number(selYear)
+  );
 
   return (
     <div className="container">
@@ -52,7 +63,7 @@ function Expenses() {
           </div>
         </div>
         <div className="col-4">
-          <ExpenseFilter />
+          <ExpenseFilter onYearSelected={onYearSelected} />
         </div>
       </div>
 
@@ -60,7 +71,7 @@ function Expenses() {
 
       {/* RENDERING ALL THE EXPENSES */}
       <div className="row">
-        {expenses.map((expense) => (
+        {filteredExpenses.map((expense) => (
           <ExpenseItem
             title={expense.title}
             amount={expense.amount}
