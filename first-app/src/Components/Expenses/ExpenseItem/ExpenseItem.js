@@ -18,6 +18,11 @@ const ExpenseItem = (props) => {
 
           {/* TO SEND ALL THE RECEIVED PROPS */}
           {/* <ExpenseDate {...props} /> */}
+
+          {/* Lifting up the state */}
+          <div className="d-grid">
+            <button className="btn btn-sm">DELETE</button>
+          </div>
         </div>
       </div>
     </div>
