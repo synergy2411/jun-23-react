@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
 import AddExpense from "./AddExpense/AddExpense";
+import ExpenseFilter from "./ExpenseFilter/ExpenseFilter";
 
 let INITIAL_EXPENSES = [
   {
@@ -49,6 +50,9 @@ function Expenses() {
               Toggle
             </button>
           </div>
+        </div>
+        <div className="col-4">
+          <ExpenseFilter />
         </div>
       </div>
 
