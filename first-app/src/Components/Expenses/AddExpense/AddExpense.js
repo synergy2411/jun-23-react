@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { v4 } from "uuid";
 
-export default function AddExpense() {
+export default function AddExpense(props) {
   const [enteredTitle, setEnteredTitle] = useState("Sample text");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredCreatedAt, setEnteredCreatedAt] = useState("");
@@ -12,7 +13,13 @@ export default function AddExpense() {
 
   const addClickHandler = (event) => {
     event.preventDefault();
-    console.log(enteredAmount, enteredTitle, enteredCreatedAt);
+    let newExpense = {
+      id: v4(),
+      title: enteredTitle,
+      amount: Number(enteredAmount),
+      createdAt: new Date(enteredCreatedAt),
+    };
+    props.addNewExpense(newExpense);
   };
 
   return (
