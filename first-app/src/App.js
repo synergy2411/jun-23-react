@@ -7,6 +7,7 @@ import Login from "./Components/Login/Login";
 import FormikDemo from "./Components/Demo/Formik/FormikDemo";
 import UseEffectDemo from "./Components/Demo/UseEffectDemo";
 import AuthContext from "./context/auth-context";
+import ThemeContext from "./context/theme-context";
 
 function App() {
   // let [username, setUsername] = useState("John Doe");
@@ -19,8 +20,10 @@ function App() {
       <h1>App coming soon...</h1>
 
       <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
-        <Login />
-        {/* <UseEffectDemo /> */}
+        <ThemeContext.Provider value={{ favTheme: "dark", fontSize: 28 }}>
+          <Login />
+          <UseEffectDemo />
+        </ThemeContext.Provider>
       </AuthContext.Provider>
 
       {/* <FormikDemo /> */}

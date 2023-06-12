@@ -340,3 +340,7 @@ Two drop downs
 - Data that change less frequently
 - Should not create more ( > 3 ) context providers
 - Applicable only for the specific branch of component Tree
+
+---
+
+> json-server --watch db.json --port=3030

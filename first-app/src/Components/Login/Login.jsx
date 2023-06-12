@@ -1,6 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
 import AuthContext from "../../context/auth-context";
 import axios from "axios";
+import ThemeContext from "../../context/theme-context";
 
 export default function Login() {
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -8,6 +9,7 @@ export default function Login() {
   const passwordInputRef = useRef();
 
   const context = useContext(AuthContext);
+  const themeContext = useContext(ThemeContext);
 
   const usernameChangeHandler = (event) =>
     setEnteredUsername(event.target.value);
@@ -37,7 +39,13 @@ export default function Login() {
       .catch(console.error);
   };
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor:
+          themeContext.favTheme === "dark" ? "darkgrey" : "lightgrey",
+        fontSize: `${themeContext.fontSize}px`,
+      }}
+    >
       <h2>User is {context.isLoggedIn ? "" : " NOT "} logged in.</h2>
       <form onSubmit={submitHandler}>
         {/* username - Controlled */}
