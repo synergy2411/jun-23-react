@@ -20,5 +20,19 @@
       "label": "new item",
       "id": "6h5-Wwu"
     }
+  ],
+  "users": [
+    {
+      "username": "john@test",
+      "password": "john123"
+    },
+    {
+      "username": "jenny@test",
+      "password": "jenny123"
+    },
+    {
+      "username": "alice@test",
+      "password": "alice123"
+    }
   ]
 }

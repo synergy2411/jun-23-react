@@ -12,13 +12,17 @@ function App() {
   // let [username, setUsername] = useState("John Doe");
   // let [toggle, setToggle] = useState(false);
 
+  let [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <div className="container">
       <h1>App coming soon...</h1>
-      <AuthContext.Provider value={{ isLoggedIn: false }}>
+
+      <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <Login />
+        {/* <UseEffectDemo /> */}
       </AuthContext.Provider>
-      {/* <UseEffectDemo /> */}
+
       {/* <FormikDemo /> */}
     </div>
   );

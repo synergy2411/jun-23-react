@@ -290,3 +290,53 @@ Life Cycle Methods - 2 phases
 
 - Uncontrolled Comp ->
   > Third-party library / widgets
+
+---
+
+# Formik - to validate React form elements without maintaining their state manually
+
+- npm install formik
+
+# Form Validation Libraries
+
+- Joi
+- Yup
+- react-hook-form
+
+---
+
+localStorage.getItem()
+localStorage.setItem()
+
+---
+
+# useEffect Flavors -
+
+- useEffect(cb) : cb will execute for every cycle of re-rendering
+- useEffect(cb, []) |componentDidMount| : cb will execute only for the initial rendering of component
+- useEffect(cb, [Dep1,Dep2, ...Depn]) : |componentDidUpdate|
+  > cb will execute at the intial rendering of component
+  > cb will also execute whenever the mentioned Dependency will change
+- useEffect(cb => cleanUpFn, [Deps]) : | componentWillUnmount |
+  > cb wll execute at the intiail rendering of component
+  > cleanUpFn will execute before the next cycle of CB.
+  > cb will also execute whenever the mentioned Dependency will change
+  > cleanUpFn will also execute just before the component is unloaded
+
+Country > Cities
+Two drop downs
+
+- Countries
+- Cities (to be displayed according to the selected country)
+
+---
+
+# Axios > npm install axios
+
+---
+
+# Object.Provider = React.createContext({})
+
+- Data that change less frequently
+- Should not create more ( > 3 ) context providers
+- Applicable only for the specific branch of component Tree

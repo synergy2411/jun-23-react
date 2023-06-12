@@ -1,5 +1,6 @@
 import React, { useState, useRef, useContext } from "react";
 import AuthContext from "../../context/auth-context";
+import axios from "axios";
 
 export default function Login() {
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -16,6 +17,24 @@ export default function Login() {
     console.log("USERNAME : ", enteredUsername);
     // console.log("PASSWORD : ", window.password.value);  // DIRECT ACCESS OF DOM, NOT A GOOD PRACTICE
     console.log("PASSWORD WITH REF : ", passwordInputRef.current.value);
+
+    // if (
+    //   enteredUsername === "john@test" &&
+    //   passwordInputRef.current.value === "john123"
+    // ) {
+    //   context.setIsLoggedIn(true);
+    // }
+
+    axios
+      .get(
+        `http://localhost:3030/users?username=${enteredUsername}&password=${passwordInputRef.current.value}`
+      )
+      .then((result) => {
+        if (result.data.length > 0) {
+          context.setIsLoggedIn(true);
+        }
+      })
+      .catch(console.error);
   };
   return (
     <div>
@@ -42,6 +61,9 @@ export default function Login() {
         <br />
 
         <button type="submit">Submit</button>
+        <button type="button" onClick={() => context.setIsLoggedIn(false)}>
+          Logout
+        </button>
       </form>
     </div>
     // <AuthContext.Consumer>
