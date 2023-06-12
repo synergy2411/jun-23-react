@@ -11,7 +11,7 @@ export default function Login() {
   const submitHandler = (event) => {
     event.preventDefault();
     console.log("USERNAME : ", enteredUsername);
-    // console.log("PASSWORD : ", window.password.value);  // NOT A GOOD PRACTICE
+    // console.log("PASSWORD : ", window.password.value);  // DIRECT ACCESS OF DOM, NOT A GOOD PRACTICE
     console.log("PASSWORD WITH REF : ", passwordInputRef.current.value);
   };
   return (
