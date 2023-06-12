@@ -232,3 +232,61 @@ Developer : HTML & Javascript
 
 - Support of CSS classes
 - npm install bootstrap
+
+---
+
+Class based - Error Boundary
+
+# to render the UI quickly and efficiently
+
+# Side effects
+
+- axios, fetch API
+- SPA - react-router
+- form validation - formik, react-hook-form
+- State Management - redux pattern
+
+---
+
+Component - Expenses, ExpenseItem, ExpenseDate, AddExpense
+Props - communicate between Parent & Child Component
+State - useState()
+
+Component : useState() / Class Based component
+Branch of Component : Context API
+App wide data : Redux Store
+
+# PureComponent -> checks for prevProps vs nextProps.
+
+- if prevProps !== nextProps, then re-render the component
+- if prevProps === nextProps, then do not re-render the component
+
+# useMemo / useCallback -> functional Components
+
+---
+
+Side Effects
+
+- Class Based - State Management & Side effect (Life Cycle Methods)
+- Functional - useState() | useEffect() hook
+
+<ErrorBoundary>
+  <Counter />
+</ErrorBoundary>
+--------
+
+Life Cycle Methods - 2 phases
+
+1. Render Phase -> Constructor, Render
+2. Commit Phase -> componentDidMount, componentDidUpdate, componentWillUnmount
+
+---
+
+- Controlled Comp ->
+
+  > More Predictable
+  > Allow us to validate the elements at the time of inputting values
+  > More Controlled
+
+- Uncontrolled Comp ->
+  > Third-party library / widgets

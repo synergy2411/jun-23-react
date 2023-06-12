@@ -3,27 +3,31 @@ import ClassBasedComp from "./Components/Demo/ClassBasedComp";
 import Expenses from "./Components/Expenses/Expenses";
 import CounterError from "./Components/Demo/ErrorBoundaryDemo/CounterError";
 import ErrorBoundary from "./Components/Demo/ErrorBoundaryDemo/ErrorBoundary";
+import Login from "./Components/Login/Login";
 
 function App() {
-  let [username, setUsername] = useState("John Doe");
-  let [toggle, setToggle] = useState(false);
+  // let [username, setUsername] = useState("John Doe");
+  // let [toggle, setToggle] = useState(false);
 
   return (
-    <div>
+    <div className="container">
       <h1>App coming soon...</h1>
-
-      <ErrorBoundary>
-        <CounterError />
-      </ErrorBoundary>
-
-      <ErrorBoundary>
-        <Expenses />
-      </ErrorBoundary>
+      <Login />
     </div>
   );
 }
 
 export default App;
+
+{
+  /* <ErrorBoundary>
+<CounterError />
+</ErrorBoundary>
+
+<ErrorBoundary>
+<Expenses />
+</ErrorBoundary> */
+}
 
 {
   /* <button onClick={() => setUsername("Chnaged Name")}>
