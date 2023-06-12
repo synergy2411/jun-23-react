@@ -16,9 +16,16 @@ export default function FormikDemo() {
     return errors;
   };
 
+  const getEmailHandler = () => {
+    if (localStorage.key("email")) {
+      console.log("GETTING EMAIL", localStorage.getItem("email"));
+    }
+  };
+
   const submitHandler = (values, { setSubmitting }) => {
     setTimeout(() => {
       console.log("VALUES : ", values);
+      localStorage.setItem("email", values.email);
       setSubmitting(false);
     }, 500);
   };
@@ -44,6 +51,8 @@ export default function FormikDemo() {
           <button type="submit" disabled={isSubmitting}>
             Submit
           </button>
+
+          <button onClick={getEmailHandler}>Get Email</button>
         </Form>
       )}
     </Formik>

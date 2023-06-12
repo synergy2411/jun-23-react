@@ -5,6 +5,7 @@ import CounterError from "./Components/Demo/ErrorBoundaryDemo/CounterError";
 import ErrorBoundary from "./Components/Demo/ErrorBoundaryDemo/ErrorBoundary";
 import Login from "./Components/Login/Login";
 import FormikDemo from "./Components/Demo/Formik/FormikDemo";
+import UseEffectDemo from "./Components/Demo/UseEffectDemo";
 
 function App() {
   // let [username, setUsername] = useState("John Doe");
@@ -13,7 +14,8 @@ function App() {
   return (
     <div className="container">
       <h1>App coming soon...</h1>
-      <FormikDemo />
+      <UseEffectDemo />
+      {/* <FormikDemo /> */}
       {/* <Login /> */}
     </div>
   );
