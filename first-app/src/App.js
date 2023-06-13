@@ -1,43 +1,61 @@
-import { useState } from "react";
-import ClassBasedComp from "./Components/Demo/ClassBasedComp";
-import Expenses from "./Components/Expenses/Expenses";
-import CounterError from "./Components/Demo/ErrorBoundaryDemo/CounterError";
-import ErrorBoundary from "./Components/Demo/ErrorBoundaryDemo/ErrorBoundary";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Components/Login/Login";
-import FormikDemo from "./Components/Demo/Formik/FormikDemo";
-import UseEffectDemo from "./Components/Demo/UseEffectDemo";
-import AuthContext from "./context/auth-context";
-import ThemeContext from "./context/theme-context";
-import UseReducerDemo from "./Components/Demo/UseReducerDemo";
-import Parent from "./Components/Demo/Parent";
+import HomePage from "./pages/Home";
+
+const router = createBrowserRouter([
+  {
+    path: "/", // http://localhost:3000/
+    element: <HomePage />,
+  },
+  {
+    path: "/products", // http://localhost:3000/products
+    element: <h2>Products loaded</h2>,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+]);
 
 function App() {
-  // let [username, setUsername] = useState("John Doe");
-  // let [toggle, setToggle] = useState(false);
+  return <RouterProvider router={router}></RouterProvider>;
+}
 
-  let [isLoggedIn, setIsLoggedIn] = useState(false);
+export default App;
 
-  return (
-    <div className="container">
-      <h1>App coming soon...</h1>
+// function App() {
+// let [username, setUsername] = useState("John Doe");
+// let [toggle, setToggle] = useState(false);
 
-      <Parent />
+// let [isLoggedIn, setIsLoggedIn] = useState(false);
 
-      {/* <UseReducerDemo /> */}
+// return (
+//   <div className="container">
+//     <h1>App coming soon...</h1>
 
-      {/* <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+//     <Parent />
+
+{
+  /* <UseReducerDemo /> */
+}
+
+{
+  /* <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <ThemeContext.Provider value={{ favTheme: "dark", fontSize: 28 }}>
           <Login />
           <UseEffectDemo />
         </ThemeContext.Provider>
-      </AuthContext.Provider> */}
-
-      {/* <FormikDemo /> */}
-    </div>
-  );
+      </AuthContext.Provider> */
 }
 
-export default App;
+{
+  /* <FormikDemo /> */
+}
+//     </div>
+//   );
+// }
+
+// export default App;
 
 {
   /* <ErrorBoundary>

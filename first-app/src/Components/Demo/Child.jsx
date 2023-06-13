@@ -1,6 +1,8 @@
 import React from "react";
 
 function Child(props) {
+  console.log(props.demoFn());
+  console.log(props.numbers);
   console.log("[CHILD]");
   return (
     <div>

@@ -1,12 +1,17 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import Child from "./Child";
 
 export default function Parent() {
   const [toggle, setToggle] = useState(false);
+  const [show, setShow] = useState(false);
 
   console.log("[PARENT]");
 
-  const demoFn = useCallback(() => console.log("the Demo Function"), []);
+  const demoFn = useCallback(() => ["C", "B", "C"], [show]);
+
+  //   const demoFn = useMemo(() => () => console.log("Demo Function"), []);
+
+  const numbers = useMemo(() => [201, 202, 203, 204], []);
 
   return (
     <div>
@@ -14,7 +19,10 @@ export default function Parent() {
       <button className="btn btn-primary" onClick={() => setToggle(!toggle)}>
         Toggle
       </button>
-      <Child toggle={true} demoFn={demoFn} />
+      <button className="btn btn-primary" onClick={() => setShow(!show)}>
+        Show
+      </button>
+      <Child toggle={true} demoFn={demoFn} numbers={numbers} />
     </div>
   );
 }

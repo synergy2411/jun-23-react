@@ -371,3 +371,21 @@ Webpack Plugin -> HotModuleReload
   Custom Hooks
 
 WithCounter(SomeComp);
+
+Reference Type - Function, Array, Object, Date
+
+useCallback -> Functions
+useMemo -> Function, Array, Object, Date
+
+---
+
+- useState()
+- useReducer()
+- useEffect()
+- useContext()
+- useCallback()
+- useMemo()
+
+---
+
+> npm install react-router-dom
