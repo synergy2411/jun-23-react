@@ -1,19 +1,26 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Components/Login/Login";
 import HomePage from "./pages/Home";
+import Root from "./pages/Root";
 
 const router = createBrowserRouter([
   {
-    path: "/", // http://localhost:3000/
-    element: <HomePage />,
-  },
-  {
-    path: "/products", // http://localhost:3000/products
-    element: <h2>Products loaded</h2>,
-  },
-  {
-    path: "/login",
-    element: <Login />,
+    path: "/root",
+    element: <Root />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "products", // http://localhost:3000/products
+        element: <h2>Products loaded</h2>,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+    ],
   },
 ]);
 
