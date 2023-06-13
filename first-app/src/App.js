@@ -2,8 +2,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Components/Login/Login";
 import HomePage from "./pages/Home";
 import Root from "./pages/Root";
+import ErrorPage from "./pages/Error";
+import Todos, { fetchTodos as todosLoader } from "./pages/Todos/Todos";
 
 const router = createBrowserRouter([
+  {
+    path: "",
+    errorElement: <ErrorPage />,
+  },
   {
     path: "/root",
     element: <Root />,
@@ -19,6 +25,11 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "todos",
+        element: <Todos />,
+        loader: todosLoader,
       },
     ],
   },
