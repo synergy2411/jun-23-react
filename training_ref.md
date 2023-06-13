@@ -356,6 +356,7 @@ function Todo () {
   <!-- All updated values should ewirte inside component -->
 
 return (
+
 <div>
 <h1>Todo</h1>
 </div>
@@ -363,3 +364,10 @@ return (
 }
 
 ---
+
+Webpack Plugin -> HotModuleReload
+
+- HOC
+  Custom Hooks
+
+WithCounter(SomeComp);

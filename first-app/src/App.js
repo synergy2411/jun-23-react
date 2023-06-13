@@ -9,6 +9,7 @@ import UseEffectDemo from "./Components/Demo/UseEffectDemo";
 import AuthContext from "./context/auth-context";
 import ThemeContext from "./context/theme-context";
 import UseReducerDemo from "./Components/Demo/UseReducerDemo";
+import Parent from "./Components/Demo/Parent";
 
 function App() {
   // let [username, setUsername] = useState("John Doe");
@@ -20,7 +21,9 @@ function App() {
     <div className="container">
       <h1>App coming soon...</h1>
 
-      <UseReducerDemo />
+      <Parent />
+
+      {/* <UseReducerDemo /> */}
 
       {/* <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <ThemeContext.Provider value={{ favTheme: "dark", fontSize: 28 }}>
