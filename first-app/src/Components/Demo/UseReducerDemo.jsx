@@ -2,21 +2,35 @@ import React, { useReducer } from "react";
 
 const initialState = {
   counter: 0,
+  result: [],
 };
 
 const reducerFn = (state, action) => {
   if (action.type === "INCREMENT") {
     // return state.counter++           // STATE IS ALWAYS IMMUTABLE
     return {
+      ...state,
       counter: state.counter + 1,
     };
   } else if (action.type === "DECREMENT") {
     return {
+      ...state,
       counter: state.counter - 1,
     };
   } else if (action.type === "ADD_COUNTER") {
     return {
+      ...state,
       counter: state.counter + action.value,
+    };
+  } else if (action.type === "SUBTRACT_COUNTER") {
+    return {
+      ...state,
+      counter: state.counter - action.value,
+    };
+  } else if (action.type === "STORE_RESULT") {
+    return {
+      ...state,
+      result: [state.counter, ...state.result],
     };
   }
   return state;
@@ -46,6 +60,25 @@ export default function UseReducerDemo() {
       >
         Add - 10
       </button>
+      <button
+        className="btn btn-info"
+        onClick={() => dispatch({ type: "SUBTRACT_COUNTER", value: 5 })}
+      >
+        Subtract - 5
+      </button>
+      <hr />
+
+      <button
+        className="btn btn-success"
+        onClick={() => dispatch({ type: "STORE_RESULT" })}
+      >
+        Store Result
+      </button>
+      <ul>
+        {state.result.map((r, index) => (
+          <li key={index}>{r}</li>
+        ))}
+      </ul>
     </div>
   );
 }
