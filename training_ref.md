@@ -344,3 +344,22 @@ Two drop downs
 ---
 
 > json-server --watch db.json --port=3030
+
+---
+
+.jsx -> hold the component code
+
+const INITIAL_EXPENSES = []
+
+function Todo () {
+
+  <!-- All updated values should ewirte inside component -->
+
+return (
+<div>
+<h1>Todo</h1>
+</div>
+)
+}
+
+---
