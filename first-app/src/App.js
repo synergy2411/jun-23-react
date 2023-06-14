@@ -5,7 +5,7 @@ import Root from "./pages/Root";
 import ErrorPage from "./pages/Error";
 import Todos, { loader as todoLoader } from "./pages/Todos/Todos";
 import TodoEdit from "./pages/Todos/TodoEdit";
-import TodoItem from "./pages/Todos/TodoItem";
+import TodoItem, { loader as todoItemLoader } from "./pages/Todos/TodoItem";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: "todos/:todoId",
         element: <TodoItem />,
+        loader: todoItemLoader,
       },
     ],
   },

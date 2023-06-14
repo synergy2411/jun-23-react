@@ -3,6 +3,8 @@ import axios from "axios";
 
 import { useLoaderData, useNavigate } from "react-router-dom";
 
+import classes from "./Todos.module.css";
+
 export default function Todos() {
   const result = useLoaderData();
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ export default function Todos() {
       <ul className="list-group">
         {result.data.map((todo) => (
           <li
-            className="list-group-item"
+            className={`${classes["clickable"]} list-group-item mb-3`}
             key={todo.id}
             onClick={() => todoSelectHandler(todo.id)}
           >
