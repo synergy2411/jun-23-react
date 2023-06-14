@@ -389,3 +389,9 @@ useMemo -> Function, Array, Object, Date
 ---
 
 > npm install react-router-dom
+
+- Route Configuration : {path : "", element : <Root/>}
+- Link
+- NavLink :
+- Nested Routes - Outlet
+- Loaders

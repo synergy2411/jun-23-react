@@ -1,17 +1,25 @@
 import React from "react";
 import axios from "axios";
 
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 export default function Todos() {
   const result = useLoaderData();
+  const navigate = useNavigate();
 
+  const todoSelectHandler = (todoId) => {
+    navigate(todoId);
+  };
   return (
     <div>
       <h1>Todos</h1>
       <ul className="list-group">
         {result.data.map((todo) => (
-          <li className="list-group-item" key={todo.id}>
+          <li
+            className="list-group-item"
+            key={todo.id}
+            onClick={() => todoSelectHandler(todo.id)}
+          >
             {todo.label}
           </li>
         ))}
@@ -20,8 +28,11 @@ export default function Todos() {
   );
 }
 
-export async function fetchTodos() {
-  const result = await axios.get("http://localhost:3030/todos");
-
-  return result;
+export async function loader() {
+  try {
+    const result = await axios.get("http://localhost:3030/todos");
+    return result;
+  } catch (err) {
+    throw new Error("Something went wrong");
+  }
 }

@@ -3,16 +3,15 @@ import Login from "./Components/Login/Login";
 import HomePage from "./pages/Home";
 import Root from "./pages/Root";
 import ErrorPage from "./pages/Error";
-import Todos, { fetchTodos as todosLoader } from "./pages/Todos/Todos";
+import Todos, { loader as todoLoader } from "./pages/Todos/Todos";
+import TodoEdit from "./pages/Todos/TodoEdit";
+import TodoItem from "./pages/Todos/TodoItem";
 
 const router = createBrowserRouter([
   {
-    path: "",
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/root",
+    path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -29,7 +28,11 @@ const router = createBrowserRouter([
       {
         path: "todos",
         element: <Todos />,
-        loader: todosLoader,
+        loader: todoLoader,
+      },
+      {
+        path: "todos/:todoId",
+        element: <TodoItem />,
       },
     ],
   },
