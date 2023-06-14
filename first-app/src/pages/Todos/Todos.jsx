@@ -12,6 +12,15 @@ export default function Todos() {
   return (
     <div>
       <h1>Todos</h1>
+      {/* To add new todo */}
+      <div className="mb-4">
+        <button
+          className="btn btn-lg btn-secondary"
+          onClick={() => navigate("new")}
+        >
+          Add New
+        </button>
+      </div>
       <ul className="list-group">
         {result.data.map((todo) => (
           <li

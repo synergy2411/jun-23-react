@@ -9,6 +9,9 @@ import TodoItem, {
   loader as todoItemLoader,
   action as todoItemAction,
 } from "./pages/Todos/TodoItem";
+import AddNewTodo, {
+  action as AddNewTodoAction,
+} from "./pages/Todos/AddNewTodo";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +35,11 @@ const router = createBrowserRouter([
         path: "todos",
         element: <Todos />,
         loader: todoLoader,
+      },
+      {
+        path: "todos/new",
+        element: <AddNewTodo />,
+        action: AddNewTodoAction,
       },
       {
         path: "todos/:todoId",

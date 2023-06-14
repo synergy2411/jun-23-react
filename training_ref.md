@@ -398,4 +398,5 @@ useMemo -> Function, Array, Object, Date
 
 ---
 
+npm install json-server -g
 json-server --watch --port=3030 db.json
