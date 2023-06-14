@@ -417,9 +417,9 @@ json-server --watch --port=3030 db.json
 
 {
 counter : 0,
+result : []
 todos : [],
 posts: []
-
 }
 
 store.reducerName.stateSliceName
