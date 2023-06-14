@@ -5,6 +5,7 @@ import {
   useLoaderData,
   useSubmit,
   redirect,
+  json,
 } from "react-router-dom";
 
 export default function TodoItem() {
@@ -51,7 +52,10 @@ export async function loader({ request, params }) {
     );
     return response;
   } catch (err) {
-    throw new Error(err);
+    throw json(
+      { message: "Unable to fetch todo for " + params.todoId },
+      { status: 500 }
+    );
   }
 }
 

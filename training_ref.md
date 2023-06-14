@@ -395,6 +395,10 @@ useMemo -> Function, Array, Object, Date
 - NavLink :
 - Nested Routes - Outlet
 - Loaders : always pre-fetch the data before loading the component
+- actions
+- useRouteError()
+- useParams()
+- Form
 
 ---
 

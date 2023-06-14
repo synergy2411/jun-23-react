@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, json } from "react-router-dom";
 
 import classes from "./Todos.module.css";
 
@@ -41,6 +41,6 @@ export async function loader() {
     const result = await axios.get("http://localhost:3030/todos");
     return result;
   } catch (err) {
-    throw new Error("Something went wrong");
+    throw json({ message: "Unable to fetch todos" }, { status: 500 });
   }
 }
