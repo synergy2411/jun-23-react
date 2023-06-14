@@ -46,6 +46,16 @@ export default function Header() {
               Todos
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink
+              to="counter"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Counter
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

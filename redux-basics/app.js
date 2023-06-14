@@ -32,3 +32,4 @@ store.subscribe(() => {
 // Dispatching Action
 store.dispatch({ type: "INCREMENT" });
 store.dispatch({ type: "DECREMENT" });
+store.dispatch({ type: "ADD_COUNTER", payload: 10 });

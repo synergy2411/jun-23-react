@@ -12,6 +12,7 @@ import TodoItem, {
 import AddNewTodo, {
   action as AddNewTodoAction,
 } from "./pages/Todos/AddNewTodo";
+import Counter from "./pages/Counter/Counter";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
         element: <TodoItem />,
         loader: todoItemLoader,
         action: todoItemAction,
+      },
+      {
+        path: "counter",
+        element: <Counter />,
       },
     ],
   },

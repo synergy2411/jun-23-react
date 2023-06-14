@@ -404,3 +404,22 @@ useMemo -> Function, Array, Object, Date
 
 npm install json-server -g
 json-server --watch --port=3030 db.json
+
+---
+
+> npm install @reduxjs/toolkit react-redux
+
+- Create Store
+- Create Reducer
+- Create Action
+- Supply the store to React App
+- Fetch the state from the Redux store
+
+{
+counter : 0,
+todos : [],
+posts: []
+
+}
+
+store.reducerName.stateSliceName
