@@ -1,24 +1,12 @@
 {
   "todos": [
     {
-      "id": "t001",
-      "label": "pot the plants"
-    },
-    {
       "id": "t002",
       "label": "buy some grocery"
     },
     {
       "id": "t003",
       "label": "renew car insurance"
-    },
-    {
-      "label": "new item",
-      "id": "MlZGVs8"
-    },
-    {
-      "label": "new item",
-      "id": "6h5-Wwu"
     }
   ],
   "users": [

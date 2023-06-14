@@ -9,9 +9,6 @@ export default function Todos() {
   const result = useLoaderData();
   const navigate = useNavigate();
 
-  const todoSelectHandler = (todoId) => {
-    navigate(todoId);
-  };
   return (
     <div>
       <h1>Todos</h1>
@@ -20,7 +17,7 @@ export default function Todos() {
           <li
             className={`${classes["clickable"]} list-group-item mb-3`}
             key={todo.id}
-            onClick={() => todoSelectHandler(todo.id)}
+            onClick={() => navigate(todo.id)}
           >
             {todo.label}
           </li>

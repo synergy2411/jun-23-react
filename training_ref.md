@@ -394,4 +394,8 @@ useMemo -> Function, Array, Object, Date
 - Link
 - NavLink :
 - Nested Routes - Outlet
-- Loaders
+- Loaders : always pre-fetch the data before loading the component
+
+---
+
+json-server --watch --port=3030 db.json
