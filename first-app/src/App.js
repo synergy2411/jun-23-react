@@ -14,6 +14,7 @@ import AddNewTodo, {
 } from "./pages/Todos/AddNewTodo";
 import Counter from "./pages/Counter/Counter";
 import Posts from "./pages/Posts/Posts";
+import ClassBased from "./pages/ClassBased/ClassBased";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
         path: "todos/new",
         element: <AddNewTodo />,
         action: AddNewTodoAction,
+      },
+      {
+        path: "class-based",
+        element: <ClassBased />,
       },
       {
         path: "posts",

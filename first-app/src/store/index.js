@@ -20,6 +20,7 @@ const store = configureStore({
     postReducer,
     authReducer,
   },
+  devTools: true,
   // middleware: new MiddlewareArray().concat(logger),
 });
 
