@@ -1,9 +1,17 @@
 import React, { useState, useRef, useContext } from "react";
 import AuthContext from "../../context/auth-context";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { registerUser } from "../../store/Auth/auth-slice";
 import ThemeContext from "../../context/theme-context";
 
 export default function Login() {
+  const dispatch = useDispatch();
+
+  const { token, isLoading, errorMessage } = useSelector(
+    (store) => store.authReducer
+  );
+
   const [enteredUsername, setEnteredUsername] = useState("");
 
   const passwordInputRef = useRef();
@@ -38,6 +46,20 @@ export default function Login() {
       })
       .catch(console.error);
   };
+
+  const registerHandler = () => {
+    dispatch(
+      registerUser({
+        email: enteredUsername,
+        password: passwordInputRef.current.value,
+      })
+    );
+  };
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <div
       style={{
@@ -46,6 +68,7 @@ export default function Login() {
         fontSize: `${themeContext.fontSize}px`,
       }}
     >
+      {errorMessage !== "" && <h1>{errorMessage}</h1>}
       <h2>User is {context.isLoggedIn ? "" : " NOT "} logged in.</h2>
       <form onSubmit={submitHandler}>
         {/* username - Controlled */}
@@ -68,7 +91,16 @@ export default function Login() {
         />
         <br />
 
-        <button type="submit">Submit</button>
+        <button type="submit">Login</button>
+
+        <button
+          type="button"
+          className="btn btn-success btn-sm"
+          onClick={registerHandler}
+        >
+          Register
+        </button>
+
         <button type="button" onClick={() => context.setIsLoggedIn(false)}>
           Logout
         </button>
