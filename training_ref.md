@@ -444,3 +444,35 @@ Promise State -
 - Pending
 - Fulfilled
 - Rejected
+
+---
+
+Functional components -> useSelector, useDispatch
+
+## Class based components -> connect()
+
+JWT -> Session less connection;
+
+## JWT -> JSON Web Token
+
+localStorage - for permanent storage
+sessionStorage - for a sesion only (till browser open)
+
+context API -
+redux store -
+
+---
+
+## enzyme Lib (more matchers) is NOT supported in React v18.x
+
+# Testing Library Screen Object
+
+get function
+-> Mostly used to access the elements from the screen;
+-> throw error if the DOM element does not exist
+query
+-> used to access the elements from the screen;
+-> Does NOT throw error if the DOM element does not exist, rather it returns NULL
+find
+-> used for async code.
+-> returns the promise
