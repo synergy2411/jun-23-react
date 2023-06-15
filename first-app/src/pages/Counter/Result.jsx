@@ -25,7 +25,11 @@ export default function Result() {
       </div>
       <ul className="list-group">
         {result.map((r, index) => (
-          <li className="list-group-item" key={index}>
+          <li
+            onClick={() => dispatch(deleteResult(index))}
+            className="list-group-item"
+            key={index}
+          >
             {r}
           </li>
         ))}

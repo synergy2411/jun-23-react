@@ -422,4 +422,25 @@ todos : [],
 posts: []
 }
 
-store.reducerName.stateSliceName
+## store.reducerName.stateSliceName
+
+Thunk - redux
+Testing
+HOC
+Custom hooks
+Comp Composition
+React with TypeScript
+Angular vs React
+
+---
+
+useSelector()
+useDispatch()
+
+---
+
+Promise State -
+
+- Pending
+- Fulfilled
+- Rejected

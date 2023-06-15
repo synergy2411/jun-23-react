@@ -13,6 +13,7 @@ import AddNewTodo, {
   action as AddNewTodoAction,
 } from "./pages/Todos/AddNewTodo";
 import Counter from "./pages/Counter/Counter";
+import Posts from "./pages/Posts/Posts";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
         path: "todos/new",
         element: <AddNewTodo />,
         action: AddNewTodoAction,
+      },
+      {
+        path: "posts",
+        element: <Posts />,
       },
       {
         path: "todos/:todoId",

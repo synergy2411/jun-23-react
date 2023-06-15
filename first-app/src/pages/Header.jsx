@@ -56,6 +56,16 @@ export default function Header() {
               Counter
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink
+              to="posts"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Posts
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

@@ -1,6 +1,7 @@
-import { MiddlewareArray, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./Counter/counter-slice";
 import resultReducer from "./Result/result-slice";
+import postReducer from "./Post/post-slice";
 
 // const logger = (state) => (next) => (action) => {
 //   console.log("Middleware works");
@@ -15,6 +16,7 @@ const store = configureStore({
   reducer: {
     counterReducer,
     resultReducer,
+    postReducer,
   },
   // middleware: new MiddlewareArray().concat(logger),
 });
