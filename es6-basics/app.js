@@ -502,41 +502,59 @@
 
 // -------------
 
-function promiseOne() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("FIRST PROMISE");
-    }, 1000);
-  });
-}
-function promiseTwo() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("SECOND PROMISE");
-    }, 2000);
-  });
-}
+// function promiseOne() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("FIRST PROMISE");
+//     }, 1000);
+//   });
+// }
+// function promiseTwo() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("SECOND PROMISE");
+//     }, 2000);
+//   });
+// }
 
-async function* theGenerator() {
-  try {
-    const firstPromiseResult = await promiseOne();
-    yield firstPromiseResult;
+// async function* theGenerator() {
+//   try {
+//     const firstPromiseResult = await promiseOne();
+//     yield firstPromiseResult;
 
-    const secondPromiseResult = await promiseTwo();
-    yield secondPromiseResult;
-  } catch (err) {
-    console.log("Something bad happened");
-  }
-}
+//     const secondPromiseResult = await promiseTwo();
+//     yield secondPromiseResult;
+//   } catch (err) {
+//     console.log("Something bad happened");
+//   }
+// }
 
 // for (let item of theGenerator()) {   // THROW ERROR- ASYNC VALUE RETURNED
 //   console.log("ASYNC ITEM : ", item);
 // }
 
-async function consumeGenerator() {
-  for await (let item of theGenerator()) {
-    console.log("ASYNC ITEM : ", item);
-  }
-}
+// async function consumeGenerator() {
+//   for await (let item of theGenerator()) {
+//     console.log("ASYNC ITEM : ", item);
+//   }
+// }
 
-consumeGenerator();
+// consumeGenerator();
+
+// -----------
+
+const parallelCall = () => {
+  return new Promise((resolve, reject) => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((resultOne) => {
+        fetch("https://jsonplaceholder.typicode.com/todos")
+          .then((response) => response.json())
+          .then((resultTwo) => {
+            resolve({ result1: resultOne, result2: resultTwo });
+          });
+      });
+  });
+};
+
+parallelCall().then(console.log).catch(console.log);

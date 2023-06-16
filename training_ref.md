@@ -426,6 +426,7 @@ posts: []
 
 Thunk - redux
 Testing
+
 HOC
 Custom hooks
 Comp Composition
@@ -476,3 +477,41 @@ query
 find
 -> used for async code.
 -> returns the promise
+
+---
+
+Redux Async Actions - createAsyncThunk()
+
+Testing
+
+- setup
+- RTL - React Testing Library
+  > react
+  > test-utils
+  > userEvent
+
+---
+
+HOC : Higher Order Components; Code reusability
+
+Custom Hooks : "use" prefix. Call Built-in Hooks. Simple Function; code reusability
+
+> Rules of hooks
+> -> always call hook inside functional component only
+> -> Never call hook inside any nested function, or inside any block
+> -> "use" Prefix
+
+Component Composition
+TypeScript in React
+Angular vs React
+
+---
+
+Serial Call -> fetch() -> data -> fetch()
+
+Parallel Call -> fetch(), fetch()
+
+setTimeout(() => {}, ms);
+
+const enhancedComponent = hoc(componentOne)
+const enhancedComponent = hoc(componentTwo)

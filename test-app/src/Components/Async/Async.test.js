@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import Async from "./Async";
 
 describe("Async Component", () => {
@@ -7,7 +7,6 @@ describe("Async Component", () => {
 
     const listItems = await screen.findAllByRole("listitem");
 
-    screen.debug;
     expect(listItems).not.toHaveLength(0);
   });
 });
