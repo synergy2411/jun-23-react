@@ -6,11 +6,14 @@ import ComponentTwo from "./Components/Hoc/ComponentTwo";
 import BackwardCounter from "./Components/CustomHookDemo/BackwardCounter";
 import ForwardCounter from "./Components/CustomHookDemo/ForwardCounter";
 import Todo from "./Components/CustomHookDemo/Todo";
+import Display from "./Components/CompositionDemo/Display";
 
 function App() {
   return (
     <div className="App">
-      <Todo />
+      <Display />
+
+      {/* <Todo /> */}
 
       {/* <BackwardCounter />
       <ForwardCounter /> */}
