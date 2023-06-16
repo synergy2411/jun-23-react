@@ -502,6 +502,7 @@ Custom Hooks : "use" prefix. Call Built-in Hooks. Simple Function; code reusabil
 > -> "use" Prefix
 
 Component Composition
+
 TypeScript in React
 Angular vs React
 
@@ -515,3 +516,35 @@ setTimeout(() => {}, ms);
 
 const enhancedComponent = hoc(componentOne)
 const enhancedComponent = hoc(componentTwo)
+
+---
+
+Inheritance : "is-a" relationship
+eg. Student is a Person
+
+Composition : "has-a" relationship; Also avoids the problem of "PROP-DRILLING"; Component Reusability
+eg. Book has a Author
+
+---
+
+npm install styled-components@5.3.10
+
+      App
+     - Display                 functional Props
+        - SuccessCard -> MyButton -> functional Props
+          - Card
+
+        - ErrorCard -> MyButton -> functional Props
+          - Card
+
+# TypeScript in React
+
+## npx create-react-app react-ts-app --template typescript
+
+JavaScript Data Types (Primitive , Reference)
+
+TypeScript additional Data Types (any, unknow, void, enum, tuple, etc)
+
+- Types for Component Props (normal or functional)
+- Types for hooks
+- Event Types

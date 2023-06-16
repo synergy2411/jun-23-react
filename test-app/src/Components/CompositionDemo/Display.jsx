@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import SuccessCard from "./SuccessCard";
-import ErrorCard from "./ErrorCard";
-import Card from "./Card";
 import MyButton from "./Button";
+import ErrorCard from "./ErrorCard";
+import SuccessCard from "./SuccessCard";
 
 export default function Display() {
   const [showSuccess, setShowSuccess] = useState(false);
