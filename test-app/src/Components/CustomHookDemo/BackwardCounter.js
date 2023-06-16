@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useCounter from "./use-counter";
+import useCounter from "../../hooks/use-counter";
 
 export default function BackwardCounter() {
   const counter = useCounter(false);
